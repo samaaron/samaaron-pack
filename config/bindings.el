@@ -47,6 +47,7 @@
 ;;j - quick-jump shortcuts
 ;;d - diff shortcuts
 ;;p - project shortcuts
+;;o - overtone shortcuts
 
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
@@ -111,6 +112,9 @@
 (global-set-key (kbd "C-c p t") 'project-tags)
 (global-set-key (kbd "C-c p d") 'project-dired)
 (global-set-key (kbd "C-c p s") 'project-status)
+
+;;overtone shortcuts
+(define-key clojure-mode-map (kbd "C-c o s") 'overtone-stop)
 
 ;;delete current word
 (global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))

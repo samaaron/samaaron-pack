@@ -7,6 +7,7 @@
 (live-add-pack-lib "mk-project")
 (require 'mk-project)
 
+(live-load-config-file "overtone-conf.el")
 (live-load-config-file "util-fns.el")
 (live-load-config-file "erc-growl.el")
 (live-load-config-file "look-and-feel.el")
