@@ -18,7 +18,7 @@
   (erc :server "irc.freenode.net" :full-name "Sam Aaron" :port 6667 :nick "samaaron"))
 
 (require 'erc-match)
-(setq erc-keywords '("samaaron" "overtone" "osc-clj" "supercollider" "monome" "touchosc"))
+(setq erc-keywords '("samaaron" "overtone" "osc-clj" "supercollider" "monome" "touchosc" "quil" "emacs live"))
 (erc-match-mode)
 
 (defun growl (title message)

@@ -8,6 +8,9 @@
 ;;mark current function
 (global-set-key (kbd "C-x C-p")     'mark-defun)
 
+;; Popwin
+(global-set-key (kbd "C-x p") popwin:keymap)
+
 ;;remove whitespace between point and next word
 (global-set-key (kbd "C-c k")     'whack-whitespace)
 (global-set-key (kbd "C-c C-k")   'whack-whitespace)

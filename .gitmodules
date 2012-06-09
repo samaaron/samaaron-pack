@@ -1,9 +1,6 @@
-[submodule "vendor/submodules/egg"]
-	path = vendor/submodules/egg
-	url = git://github.com/byplayer/egg.git
 [submodule "vendor/submodules/deft"]
-	path = vendor/submodules/deft
-	url = git://jblevins.org/git/deft.git
+        path = vendor/submodules/deft
+        url = git://jblevins.org/git/deft.git
 [submodule "vendor/submodules/mk-project"]
-	path = vendor/submodules/mk-project
-	url = git://github.com/mattkeller/mk-project.git
+        path = vendor/submodules/mk-project
+        url = git://github.com/mattkeller/mk-project.git

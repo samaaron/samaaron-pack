@@ -1,9 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Sam Aaron's Personal Live Pack
 
-(live-add-pack-lib "egg")
-(require 'egg)
-
 (live-add-pack-lib "mk-project")
 (require 'mk-project)
 
