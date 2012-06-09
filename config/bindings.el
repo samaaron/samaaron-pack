@@ -39,6 +39,8 @@
 (define-key paredit-mode-map (kbd "C-M-z") 'align-cljlet)
 (define-key paredit-mode-map (kbd "M-s") 'paredit-split-sexp)
 (define-key paredit-mode-map (kbd "M-j") 'paredit-join-sexps)
+(define-key paredit-mode-map (kbd "M-P") 'live-paredit-previous-top-level-form)
+(define-key paredit-mode-map (kbd "M-N") 'live-paredit-next-top-level-form)
 
 
 ;;C-c handy shortcuts
