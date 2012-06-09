@@ -1,6 +1,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Sam Aaron's Personal Live Pack
 
+(live-add-pack-lib "magit")
+(require 'magit)
+
 (live-add-pack-lib "mk-project")
 (require 'mk-project)
 
