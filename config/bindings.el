@@ -11,9 +11,9 @@
 ;; Popwin
 (global-set-key (kbd "C-x p") popwin:keymap)
 
-;;remove whitespace between point and next word
-(global-set-key (kbd "C-c k")     'whack-whitespace)
-(global-set-key (kbd "C-c C-k")   'whack-whitespace)
+;;remove whitespace between point and next word except one space
+;;use delete-horizontal-space to completely nuke all whitespace
+(global-set-key (kbd "M-SPC ")   'live-delete-whitespace-except-one)
 
 ;;make ^h delete rather than help
 (global-set-key (kbd "C-h") 'delete-backward-char)
@@ -30,7 +30,7 @@
 ;;paredit
 (define-key paredit-mode-map (kbd "C-M-e") 'paredit-backward-barf-sexp)
 (define-key paredit-mode-map (kbd "C-M-s") 'paredit-backward-slurp-sexp)
-(define-key paredit-mode-map (kbd "C-M-j") 'paredit-forward-slurp-sexp)
+(define-key paredit-mode-map (kbd "C-M-j") 'live-paredit-forward-slurp-sexp-neatly)
 (define-key paredit-mode-map (kbd "C-M-y") 'paredit-forward-barf-sexp)
 (define-key paredit-mode-map (kbd "C-c l k") 'paredit-splice-sexp-killing-forward)
 (define-key paredit-mode-map (kbd "C-c l w") 'paredit-splice-sexp-killing-backward)
@@ -41,18 +41,19 @@
 (define-key paredit-mode-map (kbd "M-j") 'paredit-join-sexps)
 (define-key paredit-mode-map (kbd "M-P") 'live-paredit-previous-top-level-form)
 (define-key paredit-mode-map (kbd "M-N") 'live-paredit-next-top-level-form)
-
+(define-key paredit-mode-map (kbd "C-M-f") 'live-paredit-forward)
 
 ;;C-c handy shortcuts
 ;;l - lispy shortcuts (i.e. paredit and clojure specific fns)
 ;;m - emacs eval shortcuts
 ;;s - slime eval shortcuts
-;;t - text manipulation shortcuts
+;;t - terminal shortcuts
 ;;i - utf8 char shortcuts
 ;;j - quick-jump shortcuts
 ;;d - diff shortcuts
 ;;p - project shortcuts
 ;;o - overtone shortcuts
+;;w - popwin shortcuts
 
 ;;text manipulation shortcuts
 (global-set-key (kbd "C-c t b")     'untabify-buffer)
@@ -118,6 +119,10 @@
 (global-set-key (kbd "C-c p d") 'project-dired)
 (global-set-key (kbd "C-c p s") 'project-status)
 
+(global-set-key (kbd "C-c w t") 'live-show-ansi-terminal)
+(global-set-key (kbd "C-c w n") 'live-new-ansi-terminal)
+(global-set-key (kbd "C-c w m") 'live-show-messages)
+
 ;;overtone shortcuts
 (define-key clojure-mode-map (kbd "C-c o s") 'overtone-stop)
 
@@ -153,8 +158,8 @@
 (global-set-key (kbd "C-c w f")  'buf-move-right)
 
 ;;fast vertical naviation
-(global-set-key  (kbd "M-P") (lambda () (interactive) (previous-line 10)))
-(global-set-key  (kbd "M-N") (lambda () (interactive) (next-line 10)))
+(global-set-key  (kbd "M-U") (lambda () (interactive) (previous-line 10)))
+(global-set-key  (kbd "M-D") (lambda () (interactive) (next-line 10)))
 (global-set-key  (kbd "M-p") 'outline-previous-visible-heading)
 (global-set-key  (kbd "M-n") 'outline-next-visible-heading)
 
@@ -220,3 +225,8 @@
 
 ;; Ace jump mode
 (global-set-key (kbd "C-o") 'ace-jump-mode)
+
+;; Show documentation/information with M-RET
+(define-key lisp-mode-shared-map (kbd "M-RET") 'live-lisp-describe-thing-at-point)
+(define-key slime-mode-map (kbd "M-RET") 'slime-describe-symbol)
+(define-key slime-repl-mode-map (kbd "M-RET") 'slime-describe-symbol)
