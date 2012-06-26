@@ -42,6 +42,7 @@
 (define-key paredit-mode-map (kbd "M-P") 'live-paredit-previous-top-level-form)
 (define-key paredit-mode-map (kbd "M-N") 'live-paredit-next-top-level-form)
 (define-key paredit-mode-map (kbd "C-M-f") 'live-paredit-forward)
+(define-key paredit-mode-map (kbd "M-q") 'live-paredit-reindent-defun)
 
 ;;C-c handy shortcuts
 ;;l - lispy shortcuts (i.e. paredit and clojure specific fns)
