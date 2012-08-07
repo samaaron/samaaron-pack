@@ -9,9 +9,8 @@
 (global-set-key (kbd "C-x C-p")     'mark-defun)
 
 ;; Popwin
-(global-set-key (kbd "C-x p") popwin:keymap)
 
-;;remove whitespace between point and next word except one space
+(global-set-key (kbd "C-x p") popwin:keymap)
 ;;use delete-horizontal-space to completely nuke all whitespace
 (global-set-key (kbd "M-SPC ")   'live-delete-whitespace-except-one)
 
@@ -43,6 +42,10 @@
 (define-key paredit-mode-map (kbd "M-N") 'live-paredit-next-top-level-form)
 (define-key paredit-mode-map (kbd "C-M-f") 'live-paredit-forward)
 (define-key paredit-mode-map (kbd "M-q") 'live-paredit-reindent-defun)
+(define-key paredit-mode-map (kbd "M-d") 'live-paredit-forward-kill-sexp)
+(define-key paredit-mode-map (kbd "M-w") 'live-paredit-backward-kill-sexp)
+(define-key paredit-mode-map (kbd "M-k") 'live-paredit-backward-kill)
+(define-key paredit-mode-map (kbd "M-\\") 'live-paredit-delete-horizontal-space)
 
 ;;C-c handy shortcuts
 ;;l - lispy shortcuts (i.e. paredit and clojure specific fns)
@@ -129,6 +132,8 @@
 
 ;;delete current word
 (global-set-key (kbd "M-w") (lambda () (interactive) (backward-word) (kill-word 1)))
+
+(global-set-key (kbd "M-k") 'live-backwards-kill-line)
 
 ;;kill regions
 (global-set-key (kbd "C-x C-k") 'kill-region)
