@@ -10,7 +10,7 @@
 (require 'erc-join)
 (erc-autojoin-mode 1)
 (setq erc-autojoin-channels-alist
-      '(("freenode.net" "#clojure" "#overtone" "#leiningen" "#quil" "#supercollider")))
+      '(("freenode.net" "#clojure" "#overtone" "#leiningen" "#quil" "#supercollider" "#datomic")))
 
 (defun erc-connect ()
   "Start up erc and connect to freedonde"
